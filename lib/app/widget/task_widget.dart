@@ -5,14 +5,12 @@ import '../util/color_pallete.dart';
 class TaskWidget extends StatelessWidget {
   final int no;
   final String title;
-  final String desc;
   final String route;
 
   const TaskWidget(
       {super.key,
       required this.no,
       required this.title,
-      required this.desc,
       required this.route});
 
   @override
@@ -65,7 +63,8 @@ class TaskWidget extends StatelessWidget {
                     child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         title,
@@ -76,17 +75,6 @@ class TaskWidget extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: 5.0,
-                      ),
-                      Flexible(
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: Text(
-                            desc,
-                            style: const TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
                       ),
                     ],
                   ),
